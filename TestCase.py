@@ -15,7 +15,10 @@ class TestCase:
         result = TestResult()
         result.test_started()
         self.set_up()
-        method = getattr(self, self.name)
-        method()
+        try:
+            method = getattr(self, self.name)
+            method()
+        except:
+            result.test_failed()
         self.tear_down()
         return result
