@@ -4,11 +4,10 @@ from TestCase import TestCase
 class WasRun(TestCase):
     def __init__(self, name):
         TestCase.__init__(self, name)
-        self.wasRun = None
-        self.wasSetUp = None
+        self.log = ""
 
     def set_up(self):
-        self.wasSetUp = 1
+        self.log += "set_up "
 
     def test_method(self):
-        self.wasRun = 1
+        self.log += "test_method "
