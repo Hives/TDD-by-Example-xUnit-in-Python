@@ -2,6 +2,10 @@ class TestCase:
     def __init__(self, name):
         self.name = name
 
+    def set_up(self):
+        pass
+
     def run(self):
+        self.set_up()
         exec("self." + self.name + "()")
 
