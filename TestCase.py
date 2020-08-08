@@ -7,5 +7,5 @@ class TestCase:
 
     def run(self):
         self.set_up()
-        exec("self." + self.name + "()")
-
+        method = getattr(self, self.name)
+        method()
