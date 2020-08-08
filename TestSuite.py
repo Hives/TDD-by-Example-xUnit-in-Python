@@ -1,8 +1,10 @@
-#! /usr/bin/env python
+class TestSuite:
+    def __init__(self):
+        self.tests = []
 
-from TestCaseTest import TestCaseTest
+    def add(self, test):
+        self.tests.append(test)
 
-print(TestCaseTest("test_template_method").run().summary())
-print(TestCaseTest("test_result").run().summary())
-print(TestCaseTest("test_failed_result").run().summary())
-print(TestCaseTest("test_failed_result_formatting").run().summary())
+    def run(self, result):
+        for test in self.tests:
+            test.run(result)

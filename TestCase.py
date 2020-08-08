@@ -1,6 +1,3 @@
-from TestResult import TestResult
-
-
 class TestCase:
     def __init__(self, name):
         self.name = name
@@ -11,8 +8,7 @@ class TestCase:
     def tear_down(self):
         pass
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         result.test_started()
         self.set_up()
         try:
@@ -21,4 +17,3 @@ class TestCase:
         except:
             result.test_failed()
         self.tear_down()
-        return result
